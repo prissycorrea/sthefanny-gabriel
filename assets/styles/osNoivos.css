@@ -1,0 +1,48 @@
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    width: 70%;
+}
+
+.card-content h2 {
+    color: #C54B50; /* Cor para o título */
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-content p {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.card-content p:last-child {
+    margin-bottom: 0;
+}
+
+.card-content .author {
+    color: #C54B50; /* Cor para o nome do autor */
+    font-weight: bold;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .card-content h2 {
+        font-size: 20px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+}

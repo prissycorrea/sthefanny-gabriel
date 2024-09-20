@@ -1,0 +1,24 @@
+.carousel {
+    background-color: #f6cccd; /* Cor de fundo */
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o carrossel na página */
+}
+
+.carousel-cell {
+    width: 100%; /* Cada slide ocupa 100% da largura do carrossel */
+    height: 700px; /* Altura do slide */
+    margin-right: 10px; /* Espaçamento entre slides */
+    overflow: hidden;
+    border-radius: 10px; /* Cantos arredondados */
+    position: relative;
+}
+
+.carousel-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a célula sem distorção */
+}
+
+.flickity-viewport {
+    height: 700px !important;
+}
