@@ -30,13 +30,15 @@ body::before {
     background-image: url('/assets/img/noivos_ilustracao.png');
     background-position:  calc(100% + 50%) calc(100% + 50%);;
     background-repeat: no-repeat;
-    background-size: 90%; /* Ajuste conforme necessário */
-    opacity: 0.1; /* Controle a opacidade aqui */
-    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+    background-size: 90%;
+    opacity: 0.1;
+    z-index: -1;
 }
 
-#home, #noivos {
-    height: 100vh;
+#home, #noivos, #casamento, #rspv {
+    height: calc(100vh - 60px);
+    width: 100vw;
+
 }
 
 .sectionTitle {
@@ -47,156 +49,104 @@ body::before {
     margin-bottom: 2em;
 }
 
-.menuLogoWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    background-color: var(--rosa-claro);
-}
-
-.menuLogoWrapper img {
-    height: 50px;
-    margin-left: 1.5em;
-}
-
-.menuWrapper {
-    background-color: var(--rosa-claro);
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    margin: 0 auto;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100px;
-    background-color: var(--rosa-claro);
-    width: 100%;
-}
-
-nav ul li {
-    list-style: none;
-    font-weight: light;
-    text-transform: uppercase;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #C54B50;
-    font-family: "Poppins", sans-serif;
-}
-
-nav a {
-    position: relative;
-    display: inline-block;
-    color: #C54B50; /* Cor dos links */
-    text-decoration: none;
-    padding: 5px 0;
-    font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s ease;
-    border-bottom: 2px solid transparent; /* Inicialmente invisível */
-}
-
-nav a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background-color: #C54B50; /* Cor da linha */
-    transition: width 0.4s ease, left 0.4s ease;
-}
-
-nav a:hover::before {
-    width: 100%; /* Expande a linha para 100% */
-    left: 0; /* Muda a posição da linha para cobrir todo o link */
-}
-
-nav a:hover {
-    color: #8a4345; /* Cor dos links no hover */
-}
-
-.countdown {
+/* Estilização da Seção Principal */
+#home {
+    height: 100vh;
+    padding: 0 20px;
+    background-color: #f6cccd;
     text-align: center;
-}
-.countdown h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-.time {
-    font-size: 2em;
-    font-family: "Silkscreen", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.imgCountdown {
-    border-radius: 10px;
-    width: 33em;
-    height: auto;
-    margin: 50px 0;
+.noivosTitle {
+    font-size: 36px;
+    color: #c54b50;
+    margin-bottom: 40px;
+    font-family: 'Press Start 2P', sans-serif;
+    padding-top:60px;
 }
 
 .photo-frame {
-    border-radius: 15px; /* Bordas arredondadas */
-    overflow: hidden; /* Garante que a imagem fique dentro dos cantos arredondados */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), /* Sombra suave */
-                0 6px 6px rgba(0, 0, 0, 0.1); /* Sombra secundária */
+    max-width: 500px;
+    margin: 0 auto 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .photo-frame:hover {
-    transform: scale(1.05); /* Leve aumento de tamanho ao passar o mouse */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), /* Sombra mais pronunciada */
-                0 8px 8px rgba(0, 0, 0, 0.15); /* Sombra secundária mais escura */
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
 }
 
+.countdown {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
 
-.countdownContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 90vh;
+.countdown h1 {
+    font-size: 28px;
+    color: #c54b50;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .countdown-container {
-    text-align: center;
-    color: #333;
+    display: flex;
+    justify-content: space-around;
 }
 
 .countdown-clock {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    justify-content: space-around;
+    gap: 20px;
 }
 
 .time-segment {
-    background-color: #ffffff;
+    background-color: #c54b50;
+    padding: 15px 20px;
     border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 80px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 .time-number {
-    font-size: 2.5em;
+    font-size: 40px;
     font-weight: bold;
-    color: #9d54bd; /* Cor roxa */
-    display: block;
 }
 
 .time-label {
-    font-size: 1em;
-    color: #666;
+    font-size: 16px;
     margin-top: 5px;
+    display: block;
 }
 
 #countdownMessage {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #9d54bd; /* Cor roxa */
+    margin-top: 30px;
+    font-size: 22px;
+    color: #555555;
+    font-family: 'Poppins', sans-serif;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .countdown-container {
+        flex-direction: column;
+    }
+
+    .time-segment {
+        margin-bottom: 15px;
+    }
+
+    .photo-frame {
+        max-width: 90%;
+    }
+}
+

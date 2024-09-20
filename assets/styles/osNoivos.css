@@ -1,48 +1,93 @@
+/* Estilização da Seção Sobre os Noivos */
+#noivos {
+    padding: 60px 20px;
+    background-color: #c54b50;
+    text-align: center;
+}
+
+/* Título da seção */
+.sectionTitleClear {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contêiner principal para alinhar o carrossel e o testimonial card */
+.sectionNoivosContainer {
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Estilização do Carrossel de Fotos */
+.carousel {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2%;
+    white-space: normal;
+    border-radius: 20px;
+}
+
+.carousel-cell img {
+    width: 100%; /* Garante que as imagens ocupem toda a largura do contêiner */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.carousel-cell img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilização do Depoimento */
 .testimonial-card {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    margin: 20px auto;
-    text-align: left;
     font-family: 'Poppins', sans-serif;
-    width: 70%;
-}
-
-.card-content h2 {
-    color: #C54B50; /* Cor para o título */
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.card-content p {
     color: #555555;
-    font-size: 16px;
+    text-align: left;
+}
+
+/* Estilização do conteúdo do Depoimento */
+.testimonial-card p {
+    margin-bottom: 20px;
     line-height: 1.6;
-    margin-bottom: 15px;
 }
 
-.card-content p:last-child {
-    margin-bottom: 0;
-}
-
-.card-content .author {
-    color: #C54B50; /* Cor para o nome do autor */
-    font-weight: bold;
+.testimonial-card .author {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #c54b50;
     text-align: right;
+    font-weight: bold;
 }
 
-@media (max-width: 600px) {
+/* Responsividade */
+@media (max-width: 768px) {
+    .sectionNoivosContainer {
+        white-space: normal;
+    }
+
+    .carousel,
+    .testimonial-card {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
     .testimonial-card {
         padding: 20px;
     }
 
-    .card-content h2 {
-        font-size: 20px;
-    }
-
-    .card-content p {
-        font-size: 14px;
+    .sectionTitleClear {
+        font-size: 28px;
     }
 }
