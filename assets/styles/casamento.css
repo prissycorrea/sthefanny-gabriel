@@ -15,7 +15,7 @@
 .casamentoWrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -78,7 +78,32 @@
 }
 
 .containerIlustracaoNoivos img {
-    width: 20%;
+    width: 80px;
+}
+.mapaWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mapaWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.containerIlustracaoNoivos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.containerIlustracaoNoivos img {
+    max-width: 100px;
+    margin: 0 10px;
 }
 
 /* Responsividade */

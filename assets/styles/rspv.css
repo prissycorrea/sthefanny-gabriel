@@ -5,6 +5,9 @@
     background-color: #c54b50; /* Cor de fundo suave */
     text-align: center;
     overflow: hidden; /* Garante que a imagem não ultrapasse os limites da seção */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #rspv::before {
@@ -12,19 +15,23 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 60%; /* Ajuste conforme necessário */
-    height: 60%; /* Ajuste conforme necessário */
-    background-image: url('/assets/img/noivos_ilustracao.png'); /* Substitua pelo caminho da sua imagem */
+    width: 60%;
+    height: 60%;
+    background-image: url('/assets/img/noivos_ilustracao.png');
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.1; /* Define a opacidade da imagem */
-    transform: translateY(20%); /* Mover a imagem para cima, de forma que apenas a parte superior fique visível */
-    transform: translateX(20%); /* Mover a imagem para cima, de forma que apenas a parte superior fique visível */
+    opacity: 0.1;
+    /* Combine as transformações */
+    transform: translateX(20%) translateY(20%);
+    /* Defina o z-index para posicionar a imagem entre o fundo e o formulário */
+    z-index: 1;
 }
 
 /* Estilização do container do formulário */
 .rspvContainer {
-    max-width: 600px;
+    position: relative; /* Necessário para o z-index */
+    z-index: 2; /* Deve ser maior que o z-index do ::before */
+    width: 600px;
     margin: 0 auto;
     background-color: #fff;
     padding: 30px;
@@ -78,6 +85,7 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    align-items: center;
 }
 
 .confirmacaoWrapper {

@@ -11,41 +11,30 @@
     color: #ffffff;
     margin-bottom: 40px;
     font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
 }
 
 /* Contêiner principal para alinhar o carrossel e o testimonial card */
-.sectionNoivosContainer {
-    text-align: center;
-    white-space: nowrap;
+.noivosContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Estilização do Carrossel de Fotos */
-.carousel {
-    width: 48%;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 2%;
-    white-space: normal;
+.noivosConteudoContainer {
+    display: flex;
+}
+
+.imageCarousel {
+    width: 70%;
     border-radius: 20px;
-}
-
-.carousel-cell img {
-    width: 100%; /* Garante que as imagens ocupem toda a largura do contêiner */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.carousel-cell img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilização do Depoimento */
 .testimonial-card {
-    width: 48%;
-    display: inline-block;
-    vertical-align: top;
+    width: 30%;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -71,20 +60,15 @@
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-    .sectionNoivosContainer {
-        white-space: normal;
+@media (max-width: 1024px) {
+    .noivosContainer {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .carousel,
     .testimonial-card {
         width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .testimonial-card {
-        padding: 20px;
+        margin-top: 20px;
     }
 
     .sectionTitleClear {

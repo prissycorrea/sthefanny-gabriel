@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./assets/styles/osNoivos.css">
     <link rel="stylesheet" href="./assets/styles/casamento.css">
     <link rel="stylesheet" href="./assets/styles/rspv.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
     <header>
@@ -23,20 +24,20 @@
                 <img src="/assets/img/emblema.png" alt="">
                 <div class="menuWrapper">
                     <ul>
-                        <li><a href="#home">Página Inicial</a></li>
-                        <li><a href="#noivos">Os Noivos</a></li>
-                        <li><a href="#casamento">Nosso dia</a></li>
-                        <li><a href="#rspv">Confirme sua presença</a></li>
+                        <li><a href="#home" data-barba="link">Página Inicial</a></li>
+                        <li><a href="#noivos" data-barba="link">Os Noivos</a></li>
+                        <li><a href="#casamento" data-barba="link">Nosso dia</a></li>
+                        <li><a href="#rspv" data-barba="link">Confirme sua presença</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
+    <main data-barba="wrapper">
         <!-- Página inicial/Countdown -->
-        <section id="home">
-            <div data-barba="wrapper">
-                <div class="countdownContainer" data-barba="container">
+        <section id="home" data-barba="container" data-barba-namespace="home">
+            <div>
+                <div class="countdownContainer">
                     <h1 class="noivosTitle">Sthefanny & Gabriel</h1>
                     <img class="imgCountdown photo-frame" src="./assets/img/sthediby04.jpg">
                     <div class="countdown">
@@ -44,6 +45,9 @@
                             <h1>Faltam até o nosso casamento:</h1>
                         </div>
                         <div class="countdown-container">
+                            <div class="containerIlustracaoNoivos">
+                                <img src="/assets/img/Diby.png">
+                            </div>
                             <div class="countdown-clock">
                                 <div id="days" class="time-segment">
                                     <span class="time-number">00</span>
@@ -62,51 +66,51 @@
                                     <span class="time-label">Segundos</span>
                                 </div>
                             </div>
+                            <div class="containerIlustracaoNoivos">
+                                <img src="/assets/img/Sthe.png">
+                            </div>
                             <div id="countdownMessage"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <!-- Sobre os noivos -->
-        <section id="noivos">
-            <div data-barba="wrapper">
-                <div class="noivosContainer" data-barba="container">
-                    <h1 class="sectionTitleClear">Os Noivos</h1>
-
-                        <div class="carousel">
-                            <div class="carousel-cell"><img src="/assets/img/sthediby01.jpg"></div>
-                            <div class="carousel-cell"><img src="/assets/img/sthediby02.jpg"></div>
-                            <div class="carousel-cell"><img src="/assets/img/sthediby03.jpg"></div>
-                            <div class="carousel-cell"><img src="/assets/img/sthediby04.jpg"></div>
-                            <div class="carousel-cell"><img src="/assets/img/sthediby05.jpg"></div>
-                            <!-- Adicione mais células conforme necessário -->
+        <section id="noivos" data-barba="container" data-barba-namespace="noivos">
+            <div class="noivosContainer">
+                <h1 class="sectionTitleClear">Os Noivos</h1>
+                <div class="noivosConteudoContainer">
+                    <div>
+                        <div>
+                            <img src="/assets/img/sthediby01.jpg" class="imageCarousel">
                         </div>
-                        <div class="testimonial-card">
-                            <div class="card-content">
-                                <p>
-                                    Desde o início, eu já sentia algo diferente. Foram muitas madrugadas conversando sobre assuntos aleatórios, falando de coração aberto e brincando um com o outro. Foi durante esses momentos que meus sentimentos começaram a surgir, mas eu nunca acreditei que seriam recíprocos. Quando tentei expressar sutilmente o que sentia, ela não parecia corresponder, então decidi desistir dessa ideia e me afoguei em outras pessoas, nos meus amigos, na tentativa de esquecer o que sentia por ela.
-                                </p>
-                                <p>
-                                    Foi nesse período que ela percebeu que me amava. Quando eu me distanciei, focando nos amigos para tentar apagar aquele sentimento, ela finalmente entendeu o que sentia por mim. E foi só depois de muito tempo, quando ela me disse que me amava mais do que como um amigo, que eu decidi ir atrás dela novamente. Abandonei a ideia de apagar aquele sentimento, o abracei e fui em direção a ela, e ela também veio em minha direção. E assim, oficializamos nossa história.
-                                </p>
-                                <p>
-                                    De lá para cá, olhando para trás, percebi que, para dar certo, ambos teríamos que querer muito. E foi exatamente o que fizemos: nós fizemos acontecer. Transformamos esse desejo em realidade, perseverando até nos momentos mais frágeis. Hoje, sentimos muito orgulho de tudo o que construímos juntos.
-                                </p>
-                                <p>
-                                    E é por isso que estamos aqui, para celebrar o nosso amor e a nossa história. E queremos que você faça parte desse momento tão especial para nós. Estamos ansiosos para compartilhar esse dia com você!
-                                </p>
-                                <small class="author">Gabriel, noivo</small>
-                            </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="card-content">
+                            <p>
+                                Desde o início, eu já sentia algo diferente. Foram muitas madrugadas conversando sobre assuntos aleatórios, falando de coração aberto e brincando um com o outro. Foi durante esses momentos que meus sentimentos começaram a surgir, mas eu nunca acreditei que seriam recíprocos. Quando tentei expressar sutilmente o que sentia, ela não parecia corresponder, então decidi desistir dessa ideia e me afoguei em outras pessoas, nos meus amigos, na tentativa de esquecer o que sentia por ela.
 
+                            </p>
+                            <p>
+                                Foi nesse período que ela percebeu que me amava. Quando eu me distanciei, focando nos amigos para tentar apagar aquele sentimento, ela finalmente entendeu o que sentia por mim. E foi só depois de muito tempo, quando ela me disse que me amava mais do que como um amigo, que eu decidi ir atrás dela novamente. Abandonei a ideia de apagar aquele sentimento, o abracei e fui em direção a ela, e ela também veio em minha direção. E assim, oficializamos nossa história.
+                            </p>
+                            <p>
+                                De lá para cá, olhando para trás, percebi que, para dar certo, ambos teríamos que querer muito. E foi exatamente o que fizemos: nós fizemos acontecer. Transformamos esse desejo em realidade, perseverando até nos momentos mais frágeis. Hoje, sentimos muito orgulho de tudo o que construímos juntos.
+                            </p>
+                            <p>
+                                E é por isso que estamos aqui, para celebrar o nosso amor e a nossa história. E queremos que você faça parte desse momento tão especial para nós. Estamos ansiosos para compartilhar esse dia com você!
+                            </p>
+                            <small class="author">Gabriel, noivo</small>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
+        
         <!-- Dados do casamento -->
-        <section id="casamento">
-            <div data-barba="wrapper">
-                <div class="casamentoContainer" data-barba="container">
+        <section id="casamento" data-barba="container" data-barba-namespace="casamento">
+            <div>
+                <div class="casamentoContainer">
                     <h1 class="sectionTitle">Nosso dia</h1>
                     <div class="casamentoWrapper">
                         <div class="ceremonyInfo">
@@ -121,7 +125,7 @@
                             <h3>Regras e Orientações</h3>
                             <ul>
                                 <li><strong>Confirmação de Presença (RSVP):</strong><br>
-                                    Por favor, confirme sua presença <a href="#rspv">clicando aqui</a>. Sua confirmação nos ajudará a organizar tudo com muito carinho.
+                                    Por favor, confirme sua presença <a href="#rspv" data-barba="link">clicando aqui</a>. Sua confirmação nos ajudará a organizar tudo com muito carinho.
                                 </li>
                                 <li><strong>Traje:</strong><br>
                                     Por favor, evite o uso de roupas brancas, pois essa cor é reservada para a noiva.
@@ -133,20 +137,19 @@
                             <p>Agradecemos por respeitar essas orientações e por compartilhar esse momento especial conosco. Estamos ansiosos para celebrar esse dia ao lado de todos vocês!</p>
                         </div>
                         <div class="mapaContainer">
+                            <div class="mapaWrapper">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.4905073352365!2d-48.97391142285566!3d-26.27819426699479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dea3dafb7b111b%3A0xdb2b50e544687a86!2sRECANTO%20WOLFF!5e0!3m2!1spt-BR!2sbr!4v1726776553024!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            <div class="containerIlustracaoNoivos">
-                                <img src="/assets/img/Sthe.png">
-                                <img src="/assets/img/Diby.png">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
         <!-- RSPV -->
-        <section id="rspv">
-            <div data-barba="wrapper">
-                <div class="rspvContainer" data-barba="container">
+        <section id="rspv" data-barba="container" data-barba-namespace="rspv">
+            <div>
+                <div class="rspvContainer">
                     <h1 class="sectionTitle">Confirme sua presença</h1>
                     <div class="rspvWrapper">
                         <form onsubmit="sendToWhatsApp(event)" method="POST" class="rsvp-form">
@@ -179,36 +182,45 @@
         </section>
     </main>
 </body>
-<script src="./assets/js/countdown.js"></script>
-<script src="./assets/js/flickity.js"></script>
 <script src="https://unpkg.com/@barba/core"></script>
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="./assets/js/countdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
 <script>
-    var flkty = new Flickity('.carousel', {
-        wrapAround: true,
-        autoPlay: 3000,
-        pauseAutoPlayOnHover: false,
-        imagesLoaded: true,
-        pageDots: true,
-        prevNextButtons: true,
-    });
+var slider = tns({
+    container: '.my-slider',
+    items: 1,
+    slideBy: 'page',
+    autoplay: true,
+    controls: true,
+    nav: true,
+    controlsPosition: 'bottom',
+    navPosition: 'bottom',
+    speed: 400,
+    autoplayButtonOutput: false,
+    controlsText: ['<', '>'],
+    /* Adicione esta linha para evitar que o slider defina larguras fixas */
+    fixedWidth: false,
+});
+
 </script>
 <script>
     barba.init({
         transitions: [
             {
-                name: 'fade',
+                name: 'slide',
                 leave(data) {
                     return gsap.to(data.current.container, {
-                        opacity: 0,
-                        duration: 1 // Tempo de duração da saída
+                        xPercent: -100,
+                        duration: 0.5,
+                        ease: 'power2.inOut'
                     });
                 },
                 enter(data) {
                     return gsap.from(data.next.container, {
-                        opacity: 0,
-                        duration: 1 // Tempo de duração da entrada
+                        xPercent: 100,
+                        duration: 0.5,
+                        ease: 'power2.inOut'
                     });
                 }
             }
