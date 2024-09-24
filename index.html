@@ -9,13 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/styles/navbar.css">
     <link rel="stylesheet" href="./assets/styles/index.css">
-    <link rel="stylesheet" href="./assets/styles/flickity.css">
-    <link rel="stylesheet" href="./assets/styles/osNoivos.css">
-    <link rel="stylesheet" href="./assets/styles/casamento.css">
-    <link rel="stylesheet" href="./assets/styles/rspv.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
 <body>
     <header>
@@ -34,82 +28,84 @@
         </nav>
     </header>
     <main data-barba="wrapper">
-        <!-- Página inicial/Countdown -->
-        <section id="home" data-barba="container" data-barba-namespace="home">
-            <div>
-                <div class="countdownContainer">
-                    <h1 class="noivosTitle">Sthefanny & Gabriel</h1>
-                    <img class="imgCountdown photo-frame" src="./assets/img/sthediby04.jpg">
-                    <div class="countdown">
-                        <div id="textoFaltam">
-                            <h1>Faltam até o nosso casamento:</h1>
-                        </div>
-                        <div class="countdown-container">
-                            <div class="containerIlustracaoNoivos">
-                                <img src="/assets/img/Diby.png">
+        <div data-barba="container" data-barba-namespace="home">
+            <section id="home">
+                <!-- Conteúdo da página inicial -->
+                <div>
+                    <div class="countdownContainer">
+                        <h1 class="noivosTitle">Sthefanny & Gabriel</h1>
+                        <img class="imgCountdown photo-frame" src="./assets/img/sthediby04.jpg">
+                        <div class="countdown">
+                            <div id="textoFaltam">
+                                <h1>Faltam até o nosso casamento:</h1>
                             </div>
-                            <div class="countdown-clock">
-                                <div id="days" class="time-segment">
-                                    <span class="time-number">00</span>
-                                    <span class="time-label">Dias</span>
+                            <div class="countdown-container">
+                                <div class="containerIlustracaoNoivos">
+                                    <img src="/assets/img/Diby.png">
                                 </div>
-                                <div id="hours" class="time-segment">
-                                    <span class="time-number">00</span>
-                                    <span class="time-label">Horas</span>
+                                <div class="countdown-clock">
+                                    <div id="days" class="time-segment">
+                                        <span class="time-number">00</span>
+                                        <span class="time-label">Dias</span>
+                                    </div>
+                                    <div id="hours" class="time-segment">
+                                        <span class="time-number">00</span>
+                                        <span class="time-label">Horas</span>
+                                    </div>
+                                    <div id="minutes" class="time-segment">
+                                        <span class="time-number">00</span>
+                                        <span class="time-label">Minutos</span>
+                                    </div>
+                                    <div id="seconds" class="time-segment">
+                                        <span class="time-number">00</span>
+                                        <span class="time-label">Segundos</span>
+                                    </div>
                                 </div>
-                                <div id="minutes" class="time-segment">
-                                    <span class="time-number">00</span>
-                                    <span class="time-label">Minutos</span>
+                                <div class="containerIlustracaoNoivos">
+                                    <img src="/assets/img/Sthe.png">
                                 </div>
-                                <div id="seconds" class="time-segment">
-                                    <span class="time-number">00</span>
-                                    <span class="time-label">Segundos</span>
-                                </div>
+                                <div id="countdownMessage"></div>
                             </div>
-                            <div class="containerIlustracaoNoivos">
-                                <img src="/assets/img/Sthe.png">
-                            </div>
-                            <div id="countdownMessage"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Sobre os noivos -->
-        <section id="noivos" data-barba="container" data-barba-namespace="noivos">
-            <div class="noivosContainer">
-                <h1 class="sectionTitleClear">Os Noivos</h1>
-                <div class="noivosConteudoContainer">
-                    <div>
+            </section>
+        </div>
+        <div data-barba="container" data-barba-namespace="noivos">
+            <section id="noivos">
+                <!-- Conteúdo da página "Os Noivos" -->
+                <div class="noivosContainer">
+                    <h1 class="sectionTitleClear">Os Noivos</h1>
+                    <div class="noivosConteudoContainer">
                         <div>
-                            <img src="/assets/img/sthediby01.jpg" class="imageCarousel">
+                            <div>
+                                <img src="/assets/img/sthediby01.jpg" class="imageCarousel">
+                            </div>
                         </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="card-content">
-                            <p>
-                                Desde o início, eu já sentia algo diferente. Foram muitas madrugadas conversando sobre assuntos aleatórios, falando de coração aberto e brincando um com o outro. Foi durante esses momentos que meus sentimentos começaram a surgir, mas eu nunca acreditei que seriam recíprocos. Quando tentei expressar sutilmente o que sentia, ela não parecia corresponder, então decidi desistir dessa ideia e me afoguei em outras pessoas, nos meus amigos, na tentativa de esquecer o que sentia por ela.
-
-                            </p>
-                            <p>
-                                Foi nesse período que ela percebeu que me amava. Quando eu me distanciei, focando nos amigos para tentar apagar aquele sentimento, ela finalmente entendeu o que sentia por mim. E foi só depois de muito tempo, quando ela me disse que me amava mais do que como um amigo, que eu decidi ir atrás dela novamente. Abandonei a ideia de apagar aquele sentimento, o abracei e fui em direção a ela, e ela também veio em minha direção. E assim, oficializamos nossa história.
-                            </p>
-                            <p>
-                                De lá para cá, olhando para trás, percebi que, para dar certo, ambos teríamos que querer muito. E foi exatamente o que fizemos: nós fizemos acontecer. Transformamos esse desejo em realidade, perseverando até nos momentos mais frágeis. Hoje, sentimos muito orgulho de tudo o que construímos juntos.
-                            </p>
-                            <p>
-                                E é por isso que estamos aqui, para celebrar o nosso amor e a nossa história. E queremos que você faça parte desse momento tão especial para nós. Estamos ansiosos para compartilhar esse dia com você!
-                            </p>
-                            <small class="author">Gabriel, noivo</small>
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p>
+                                    Desde o início, eu já sentia algo diferente. Foram muitas madrugadas conversando sobre assuntos aleatórios, falando de coração aberto e brincando um com o outro. Foi durante esses momentos que meus sentimentos começaram a surgir, mas eu nunca acreditei que seriam recíprocos. Quando tentei expressar sutilmente o que sentia, ela não parecia corresponder, então decidi desistir dessa ideia e me afoguei em outras pessoas, nos meus amigos, na tentativa de esquecer o que sentia por ela.
+                                </p>
+                                <p>
+                                    Foi nesse período que ela percebeu que me amava. Quando eu me distanciei, focando nos amigos para tentar apagar aquele sentimento, ela finalmente entendeu o que sentia por mim. E foi só depois de muito tempo, quando ela me disse que me amava mais do que como um amigo, que eu decidi ir atrás dela novamente. Abandonei a ideia de apagar aquele sentimento, o abracei e fui em direção a ela, e ela também veio em minha direção. E assim, oficializamos nossa história.
+                                </p>
+                                <p>
+                                    De lá para cá, olhando para trás, percebi que, para dar certo, ambos teríamos que querer muito. E foi exatamente o que fizemos: nós fizemos acontecer. Transformamos esse desejo em realidade, perseverando até nos momentos mais frágeis. Hoje, sentimos muito orgulho de tudo o que construímos juntos.
+                                </p>
+                                <p>
+                                    E é por isso que estamos aqui, para celebrar o nosso amor e a nossa história. E queremos que você faça parte desse momento tão especial para nós. Estamos ansiosos para compartilhar esse dia com você!
+                                </p>
+                                <small class="author">Gabriel, noivo</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-        </section>
-        
-        <!-- Dados do casamento -->
-        <section id="casamento" data-barba="container" data-barba-namespace="casamento">
-            <div>
+            </section>
+        </div>
+        <div data-barba="container" data-barba-namespace="casamento">
+            <section id="casamento">
+                <!-- Conteúdo da página "Nosso dia" -->
                 <div class="casamentoContainer">
                     <h1 class="sectionTitle">Nosso dia</h1>
                     <div class="casamentoWrapper">
@@ -143,16 +139,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- RSPV -->
-        <section id="rspv" data-barba="container" data-barba-namespace="rspv">
-            <div>
+            </section>
+        </div>
+        <div data-barba="container" data-barba-namespace="rspv">
+            <section id="rspv">
+                <!-- Conteúdo da página "Confirme sua presença" -->
                 <div class="rspvContainer">
                     <h1 class="sectionTitle">Confirme sua presença</h1>
                     <div class="rspvWrapper">
-                        <form onsubmit="sendToWhatsApp(event)" method="POST" class="rsvp-form">
+                        <form action="https://formspree.io/f/xovaodap" method="POST" class="rsvp-form">
                             <label for="name">Nome Completo:</label>
                             <input type="text" id="name" name="name" required>
                             <label for="email">E-mail:</label>
@@ -178,32 +173,13 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 </body>
 <script src="https://unpkg.com/@barba/core"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="./assets/js/countdown.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
-<script>
-var slider = tns({
-    container: '.my-slider',
-    items: 1,
-    slideBy: 'page',
-    autoplay: true,
-    controls: true,
-    nav: true,
-    controlsPosition: 'bottom',
-    navPosition: 'bottom',
-    speed: 400,
-    autoplayButtonOutput: false,
-    controlsText: ['<', '>'],
-    /* Adicione esta linha para evitar que o slider defina larguras fixas */
-    fixedWidth: false,
-});
-
-</script>
 <script>
     barba.init({
         transitions: [
