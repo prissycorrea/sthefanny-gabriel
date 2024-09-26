@@ -1,7 +1,6 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    overflow-x: hidden;
     padding: 0;
 }
 
@@ -182,19 +181,45 @@ header {
     justify-content: space-around;
 }
 
-.countdown-clock {
+/*.countdown-clock {
     display: flex;
     gap: 20px;
     justify-content: space-around;
+}*/
+
+.countdown-clock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .time-segment {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #c54b50;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    width: 110px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .time-segment {
+        flex: 1 1 calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+
+/*.time-segment {
     background-color: #c54b50;
     border-radius: 10px;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
     padding: 15px 20px;
-}
+}*/
 
 .time-label {
     display: block;
@@ -207,6 +232,10 @@ header {
     font-weight: bold;
 }
 
+.containerIlustracaoNoivos {
+    gap: 10px;
+}
+
 #countdownMessage {
     color: #555555;
     font-family: 'Poppins', sans-serif;
@@ -215,9 +244,9 @@ header {
 }
 
 /* Responsividade da Página Inicial */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .countdown-clock {
-        flex-direction: column;
+        /*flex-direction: column;*/
     }
 
     .noivosTitle {
@@ -227,10 +256,24 @@ header {
     header {
         display: none;
     }
+
+    .containerIlustracaoNoivos {
+        /*display: none;*/
+    }
+
+    #home {
+        height: 140vh;
+    }
+
+    .noivosTitle {
+        font-size: 36px;
+        margin-top: -120px;
+    }
 }
 @media (max-width: 768px) {
     .countdownContainer {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 120vh;
         width: 100vw;
     }
 
@@ -239,7 +282,7 @@ header {
     }
 
     .photo-frame {
-        max-width: 90%;
+        max-width: 80%;
     }
 
     .time-segment {
@@ -328,7 +371,7 @@ header {
 
 .mapaWrapper iframe {
     width: 100%;
-    height: 450px;
+    height: 800px;
     left: 0;
     top: 0;
 }
@@ -345,6 +388,10 @@ header {
         margin-bottom: 20px;
         padding: 20px;
         width: 100%;
+    }
+
+    .ceremonyInfo ul li {
+        list-style: none;
     }
 
     .sectionTitle {
@@ -576,8 +623,12 @@ textarea {
 }
 
 @media (max-width: 768px) {
-    .ceremonyInfo, .mapaContainer, .rspvContainer, .noivosConteudoContainer, .countdown, .noivosContainer {
+    .ceremonyInfo, .mapaContainer, .rspvContainer, .noivosConteudoContainer, .noivosContainer {
         width: 100%;
         max-width: 100%;
+    }
+
+   .countdown {
+        width: 80%;
     }
 }
