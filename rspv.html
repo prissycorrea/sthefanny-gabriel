@@ -4,7 +4,7 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sthefanny & Gabriel</title>
+    <title>Confirme sua Presença - Sthefanny & Gabriel</title>
 
     <!-- Fontes e Estilos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,45 +34,36 @@
 
     <!-- Conteúdo Principal -->
     <main data-barba="wrapper">
-        <div data-barba="container" data-barba-namespace="home">
-            <section id="home">
-                <!-- Conteúdo da página inicial -->
-                <div>
-                    <div class="countdownContainer">
-                        <h1 class="noivosTitle">Sthefanny & Gabriel</h1>
-                        <img class="imgCountdown photo-frame" src="./assets/img/sthediby04.jpg">
-                        <div class="countdown">
-                            <div id="textoFaltam">
-                                <h1>Faltam até o nosso casamento:</h1>
+        <div data-barba="container" data-barba-namespace="rspv">
+            <section id="rspv">
+                <!-- Conteúdo da página "Confirme sua presença" -->
+                <div class="rspvContainer">
+                    <h1 class="sectionTitle">Confirme sua presença</h1>
+                    <div class="rspvWrapper">
+                        <form action="https://formspree.io/f/xovaodap" method="POST" class="rsvp-form">
+                            <label for="name">Nome Completo:</label>
+                            <input type="text" id="name" name="name" required>
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="_replyto" placeholder="exemplo@email.com" required>
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                            <div class="confirmacaoContainer">
+                                <div class="confirmacaoWrapper">
+                                    <label for="attendance">Confirma Presença?</label>
+                                    <select id="attendance" name="attendance" required>
+                                        <option value="yes">Sim</option>
+                                        <option value="no">Não</option>
+                                    </select>
+                                </div>
+                                <div class="confirmacaoWrapper">
+                                    <label for="guests">Número de Acompanhantes:</label>
+                                    <input type="number" id="guests" name="guests" min="0" value="0" required>
+                                </div>
                             </div>
-                            <div class="countdown-container">
-                                <div class="containerIlustracaoNoivos">
-                                    <img src="./assets/img/Diby.png">
-                                </div>
-                                <div class="countdown-clock">
-                                    <div id="days" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Dias</span>
-                                    </div>
-                                    <div id="hours" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Horas</span>
-                                    </div>
-                                    <div id="minutes" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Minutos</span>
-                                    </div>
-                                    <div id="seconds" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Segundos</span>
-                                    </div>
-                                </div>
-                                <div class="containerIlustracaoNoivos">
-                                    <img src="./assets/img/Sthe.png">
-                                </div>
-                                <div id="countdownMessage"></div>
-                            </div>
-                        </div>
+                            <label for="message">Mensagem para os Noivos:</label>
+                            <textarea id="message" name="message"></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -83,8 +74,6 @@
     <!-- Barba.js e GSAP -->
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- Script de contagem regressiva -->
-    <script src="./assets/js/countdown.js"></script>
     <!-- Inicialização do Barba.js -->
     <script>
         barba.init({

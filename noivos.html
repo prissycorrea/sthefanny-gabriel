@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Noivos - Sthefanny & Gabriel</title>
+
+    <!-- Fontes e Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inclua todas as fontes necessárias -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="./assets/styles/index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="menuLogoWrapper">
+                <img src="./assets/img/emblema.png" alt="Emblema">
+                <div class="menuWrapper">
+                    <ul>
+                        <li><a href="index.html" data-barba="link">Página Inicial</a></li>
+                        <li><a href="noivos.html" data-barba="link">Os Noivos</a></li>
+                        <li><a href="casamento.html" data-barba="link">Nosso Dia</a></li>
+                        <li><a href="rspv.html" data-barba="link">Confirme sua Presença</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="noivos">
+            <section id="noivos">
+                <!-- Conteúdo da página "Os Noivos" -->
+                <div class="noivosContainer">
+                    <h1 class="sectionTitleClear">Os Noivos</h1>
+                    <div class="noivosConteudoContainer">
+                        <div>
+                            <div>
+                                <img src="./assets/img/sthediby01.jpg" class="imageCarousel">
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p>
+                                    Desde o início, eu já sentia algo diferente. Foram muitas madrugadas conversando sobre assuntos aleatórios, falando de coração aberto e brincando um com o outro. Foi durante esses momentos que meus sentimentos começaram a surgir, mas eu nunca acreditei que seriam recíprocos. Quando tentei expressar sutilmente o que sentia, ela não parecia corresponder, então decidi desistir dessa ideia e me afoguei em outras pessoas, nos meus amigos, na tentativa de esquecer o que sentia por ela.
+                                </p>
+                                <p>
+                                    Foi nesse período que ela percebeu que me amava. Quando eu me distanciei, focando nos amigos para tentar apagar aquele sentimento, ela finalmente entendeu o que sentia por mim. E foi só depois de muito tempo, quando ela me disse que me amava mais do que como um amigo, que eu decidi ir atrás dela novamente. Abandonei a ideia de apagar aquele sentimento, o abracei e fui em direção a ela, e ela também veio em minha direção. E assim, oficializamos nossa história.
+                                </p>
+                                <p>
+                                    De lá para cá, olhando para trás, percebi que, para dar certo, ambos teríamos que querer muito. E foi exatamente o que fizemos: nós fizemos acontecer. Transformamos esse desejo em realidade, perseverando até nos momentos mais frágeis. Hoje, sentimos muito orgulho de tudo o que construímos juntos.
+                                </p>
+                                <p>
+                                    E é por isso que estamos aqui, para celebrar o nosso amor e a nossa história. E queremos que você faça parte desse momento tão especial para nós. Estamos ansiosos para compartilhar esse dia com você!
+                                </p>
+                                <small class="author">Gabriel, noivo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <!-- Barba.js e GSAP -->
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- Inicialização do Barba.js -->
+    <script>
+        barba.init({
+            transitions: [
+                {
+                    name: 'slide',
+                    leave(data) {
+                        return gsap.to(data.current.container, {
+                            xPercent: -100,
+                            duration: 0.5,
+                            ease: 'power2.inOut'
+                        });
+                    },
+                    enter(data) {
+                        return gsap.from(data.next.container, {
+                            xPercent: 100,
+                            duration: 0.5,
+                            ease: 'power2.inOut'
+                        });
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+</html>
