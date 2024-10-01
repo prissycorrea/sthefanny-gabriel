@@ -88,10 +88,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <!-- Script de contagem regressiva -->
     <script src="./assets/js/countdown.js"></script>
+    <script src="./assets/js/menuHamburguer.js"></script>
     <!-- Inicialização do Barba.js -->
     <script>
         // Aguarde o carregamento do DOM
         document.addEventListener('DOMContentLoaded', function() {
+            initMenuToggle();
             // Inicialização do Barba.js
             barba.init({
                 sync: true,

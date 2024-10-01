@@ -681,7 +681,6 @@ textarea {
     background: none;
     border: none;
     cursor: pointer;
-    display: none; /* Escondido por padrão (desktop) */
     padding: 10px;
 }
 
@@ -794,6 +793,10 @@ textarea {
 }
 
 /* Ajustes adicionais para o menu no desktop */
+.menu-toggle {
+    display: none; /* Oculta o botão do menu no desktop */
+}
+
 .menuWrapper ul {
     list-style: none;
     display: flex;
@@ -814,4 +817,63 @@ textarea {
 .menuWrapper ul li a:focus  {
     background-color: #c54b50;
     color: #ffffff;
+}
+/* Estilos específicos para dispositivos móveis */
+@media (max-width: 1023px) {
+    .menuLogoWrapper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Exibe o botão do menu no mobile */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Oculta o menu no mobile por padrão */
+    .menuWrapper {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Ajuste conforme necessário */
+        right: 20px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: calc(100% - 40px);
+        max-width: 300px;
+        z-index: 1000;
+    }
+
+    .menuWrapper.active {
+        display: flex; /* Exibe o menu quando ativo */
+    }
+
+    .menuWrapper ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .menuWrapper ul li {
+        margin: 0;
+    }
+
+    .menuWrapper ul li a {
+        padding: 15px 20px;
+        width: 100%;
+        color: #555555;
+        text-decoration: none;
+    }
+
+    .menuWrapper ul li a:hover {
+        background-color: #f6cccd;
+    }
+
+    /* Estilo do ícone de hambúrguer no mobile */
+    .menu-toggle .hamburger,
+    .menu-toggle .hamburger::before,
+    .menu-toggle .hamburger::after {
+        background-color: #c54b50; /* Cor do ícone de hambúrguer */
+    }
 }

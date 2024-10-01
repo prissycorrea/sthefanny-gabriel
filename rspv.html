@@ -20,6 +20,10 @@
         <nav>
             <div class="menuLogoWrapper">
                 <img src="./assets/img/emblema.png" alt="Emblema">
+                <!-- Botão do menu (ícone de hambúrguer) -->
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span class="hamburger"></span>
+                </button>
                 <div class="menuWrapper">
                     <ul>
                         <li><a href="index.html" data-barba="link">Página Inicial</a></li>
@@ -74,28 +78,62 @@
     <!-- Barba.js e GSAP -->
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- Script de contagem regressiva -->
+    <script src="./assets/js/countdown.js"></script>
+    <script src="./assets/js/menuHamburguer.js"></script>
     <!-- Inicialização do Barba.js -->
     <script>
-        barba.init({
-            transitions: [
-                {
-                    name: 'slide',
-                    leave(data) {
-                        return gsap.to(data.current.container, {
-                            xPercent: -100,
-                            duration: 0.5,
-                            ease: 'power2.inOut'
-                        });
-                    },
-                    enter(data) {
-                        return gsap.from(data.next.container, {
-                            xPercent: 100,
-                            duration: 0.5,
-                            ease: 'power2.inOut'
-                        });
+        // Aguarde o carregamento do DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            initMenuToggle();
+            // Inicialização do Barba.js
+            barba.init({
+                sync: true,
+                transitions: [
+                    {
+                        async leave(data) {
+                            const done = this.async();
+                            // Limpe o intervalo se estiver saindo da página inicial
+                            if (data.current.namespace === 'home' && typeof countdownInterval !== 'undefined') {
+                                clearInterval(countdownInterval);
+                            }
+                            // Animação de saída
+                            gsap.to(data.current.container, {
+                                opacity: 0,
+                                duration: 0.5,
+                                onComplete: done
+                            });
+                        },
+                        async enter(data) {
+                            // Animação de entrada
+                            gsap.from(data.next.container, {
+                                opacity: 0,
+                                duration: 0.5
+                            });
+                            // Inicialize o contador se estiver na página inicial
+                            if (data.next.namespace === 'home') {
+                                initializeCountdown();
+                            }
+                        },
+                        async once(data) {
+                            // Animação na primeira carga
+                            gsap.from(data.next.container, {
+                                opacity: 0,
+                                duration: 0.5
+                            });
+                            // Inicialize o contador se estiver na página inicial
+                            if (data.next.namespace === 'home') {
+                                initializeCountdown();
+                            }
+                        }
                     }
-                }
-            ]
+                ]
+            });
+    
+            // Caso a página inicial seja carregada diretamente sem transição
+            if (document.querySelector('[data-barba-namespace="home"]')) {
+                initializeCountdown();
+            }
         });
     </script>
 </body>
