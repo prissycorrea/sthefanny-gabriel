@@ -1,101 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sthefanny & Gabriel</title>
-    <link rel="icon" href="./assets/img/favicons/pinkHeart.png" type="image/x-icon">
+    <link
+      rel="icon"
+      href="./assets/img/favicons/pinkHeart.png"
+      type="image/x-icon"
+    />
     <!-- Fontes e Estilos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Inclua todas as fontes necessárias -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="./assets/styles/index.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-heart@2/tsparticles.shape.heart.min.js"></script>
+  </head>
+  <body>
+    <!-- tsparticles container -->
+    <div id="tsparticles"></div>
+
     <!-- Header -->
     <header>
-        <nav>
-            <div class="menuLogoWrapper">
-                <img src="./assets/img/emblema.png" alt="Emblema">
-                <!-- Botão do menu (ícone de hambúrguer) -->
-                <button class="menu-toggle" aria-label="Abrir menu">
-                    <span class="hamburger"></span>
-                </button>
-                <div class="menuWrapper">
-                    <ul>
-                        <li><a href="index.html" data-barba="link">Página Inicial</a></li>
-                        <li><a href="noivos.html" data-barba="link">Os Noivos</a></li>
-                        <li><a href="casamento.html" data-barba="link">Nosso Dia</a></li>
-                        <li><a href="rspv.html" data-barba="link">Confirme sua Presença</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <nav>
+        <div class="menuLogoWrapper">
+          <img src="./assets/img/emblema.png" alt="Emblema" />
+          <!-- Botão do menu (ícone de hambúrguer) -->
+          <button class="menu-toggle" aria-label="Abrir menu">
+            <span class="hamburger"></span>
+          </button>
+          <div class="menuWrapper">
+            <ul>
+              <li><a href="index.html">Página Inicial</a></li>
+              <li><a href="noivos.html">Os Noivos</a></li>
+              <li><a href="casamento.html">Nosso Dia</a></li>
+              <li><a href="rspv.html">Confirme sua Presença</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- Conteúdo Principal -->
-    <main data-barba="wrapper">
-        <div data-barba="container" data-barba-namespace="home">
-            <section id="home">
-                <!-- Conteúdo da página inicial -->
-                <div>
-                    <div class="countdownContainer">
-                        <h1 class="noivosTitle">Sthefanny & Gabriel</h1>
-                        <img class="imgCountdown photo-frame" src="./assets/img/sthediby04.jpg">
-                        <div class="countdown">
-                            <div id="textoFaltam">
-                                <h1>Faltam até o nosso casamento:</h1>
-                            </div>
-                            <div class="countdown-container">
-                                <div class="containerIlustracaoNoivos">
-                                    <img src="./assets/img/Diby.png">
-                                </div>
-                                <div class="countdown-clock">
-                                    <div id="days" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Dias</span>
-                                    </div>
-                                    <div id="hours" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Horas</span>
-                                    </div>
-                                    <div id="minutes" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Minutos</span>
-                                    </div>
-                                    <div id="seconds" class="time-segment">
-                                        <span class="time-number">00</span>
-                                        <span class="time-label">Segundos</span>
-                                    </div>
-                                </div>
-                                <div class="containerIlustracaoNoivos">
-                                    <img src="./assets/img/Sthe.png">
-                                </div>
-                                <div id="countdownMessage"></div>
-                            </div>
-                        </div>
-                    </div>
+    <main>
+      <section id="home">
+        <!-- Conteúdo da página inicial -->
+        <div>
+          <div class="countdownContainer">
+            <h1 class="noivosTitle">Sthefanny & Gabriel</h1>
+            <img
+              class="imgCountdown photo-frame"
+              src="./assets/img/sthediby04.jpg"
+            />
+            <div class="countdown">
+              <div id="textoFaltam">
+                <h1>Faltam até o nosso casamento:</h1>
+              </div>
+              <div class="countdown-container">
+                <div class="containerIlustracaoNoivos">
+                  <img src="./assets/img/Diby.png" />
                 </div>
-            </section>
+                <div class="countdown-clock">
+                  <div id="days" class="time-segment">
+                    <span class="time-number">00</span>
+                    <span class="time-label">Dias</span>
+                  </div>
+                  <div id="hours" class="time-segment">
+                    <span class="time-number">00</span>
+                    <span class="time-label">Horas</span>
+                  </div>
+                  <div id="minutes" class="time-segment">
+                    <span class="time-number">00</span>
+                    <span class="time-label">Minutos</span>
+                  </div>
+                  <div id="seconds" class="time-segment">
+                    <span class="time-number">00</span>
+                    <span class="time-label">Segundos</span>
+                  </div>
+                </div>
+                <div class="containerIlustracaoNoivos">
+                  <img src="./assets/img/Sthe.png" />
+                </div>
+                <div id="countdownMessage"></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
     </main>
 
-    <!-- Scripts -->
-    <!-- Barba.js e GSAP -->
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- Script de contagem regressiva -->
+    <!-- Scripts Personalizados -->
     <script src="./assets/js/countdown.js"></script>
     <script src="./assets/js/menuHamburguer.js"></script>
-    <!-- Inicialização do Barba.js -->
+    <!-- Inicialização dos scripts -->
+
     <script>
-        // Aguarde o carregamento do DOM
-        document.addEventListener('DOMContentLoaded', function() {
-            initMenuToggle();
-            // Inicialização do Barba.js
-            barba.init({
+      document.addEventListener("DOMContentLoaded", function () {
+        initMenuToggle();
+
+        // Carrega o shape "heart"
+        loadHeartShape(tsParticles);
+
+        // Inicializa o tsparticles
+        tsParticles.load("tsparticles", {
+          particles: {
+            number: {
+              value: 150,
+              density: {
+                enable: true,
+                area: 800,
+              },
+            },
+            color: {
+              value: "#FF7AA2", // Cor das partículas
+            },
+            shape: {
+              type: "heart", // Usando o shape "heart"
+            },
+            opacity: {
+              value: 0.2,
+              random: false,
+            },
+            size: {
+              value: 20,
+              random: true,
+              anim: {
+                enable: false,
+              },
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "bottom",
+              random: false,
+              straight: false,
+              outModes: {
+                default: "out",
+              },
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "bubble",
+              },
+              onClick: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 200,
+                size: 30,
+                duration: 2,
+                opacity: 0.8,
+                speed: 3,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          retina_detect: true,
+        });
+
+                    // Inicialização do Barba.js
+                    barba.init({
                 sync: true,
                 transitions: [
                     {
@@ -142,14 +223,10 @@
             if (document.querySelector('[data-barba-namespace="home"]')) {
                 initializeCountdown();
             }
-        });
-    </script>
-</body>
-</html>
 
-<!--
-FALTA:
-CAROUSEL
-REVISAO RESPONSIVO
-LIMPEZA DO CODIGO
--->
+        // Inicialize o contador
+        initializeCountdown();
+      });
+    </script>
+  </body>
+</html>

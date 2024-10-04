@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="./assets/styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-heart@2/tsparticles.shape.heart.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -79,20 +81,87 @@
         </div>
     </main>
 
-    <!-- Scripts -->
-    <!-- Barba.js e GSAP -->
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- Script de contagem regressiva -->
-    <script src="./assets/js/countdown.js"></script>
+
+    <!-- Scripts Personalizados -->
     <script src="./assets/js/menuHamburguer.js"></script>
-    <!-- Inicialização do Barba.js -->
+    <!-- Inicialização dos scripts -->
+
     <script>
-        // Aguarde o carregamento do DOM
-        document.addEventListener('DOMContentLoaded', function() {
-            initMenuToggle();
-            // Inicialização do Barba.js
-            barba.init({
+      document.addEventListener("DOMContentLoaded", function () {
+        initMenuToggle();
+
+        // Carrega o shape "heart"
+        loadHeartShape(tsParticles);
+
+        // Inicializa o tsparticles
+        tsParticles.load("tsparticles", {
+          particles: {
+            number: {
+              value: 150,
+              density: {
+                enable: true,
+                area: 800,
+              },
+            },
+            color: {
+              value: "#FF7AA2", // Cor das partículas
+            },
+            shape: {
+              type: "heart", // Usando o shape "heart"
+            },
+            opacity: {
+              value: 0.2,
+              random: false,
+            },
+            size: {
+              value: 20,
+              random: true,
+              anim: {
+                enable: false,
+              },
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "bottom",
+              random: false,
+              straight: false,
+              outModes: {
+                default: "out",
+              },
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "bubble",
+              },
+              onClick: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 200,
+                size: 30,
+                duration: 2,
+                opacity: 0.8,
+                speed: 3,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+            },
+          },
+          retina_detect: true,
+        });
+
+                    // Inicialização do Barba.js
+                    barba.init({
                 sync: true,
                 transitions: [
                     {
@@ -134,12 +203,7 @@
                     }
                 ]
             });
-    
-            // Caso a página inicial seja carregada diretamente sem transição
-            if (document.querySelector('[data-barba-namespace="home"]')) {
-                initializeCountdown();
-            }
-        });
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -5,136 +5,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirme sua Presença - Sthefanny & Gabriel</title>
-    <link rel="icon" href="./assets/img/favicons/pinkHeart.png" type="image/x-icon">
-    <!-- Fontes e Estilos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Inclua todas as fontes necessárias -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Link para o arquivo CSS -->
-    <link rel="stylesheet" href="./assets/styles/index.css">
+    <link
+    rel="icon"
+    href="./assets/img/favicons/pinkHeart.png"
+    type="image/x-icon"
+  />
+  <!-- Fontes e Estilos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/styles/index.css" />
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-shape-heart@2/tsparticles.shape.heart.min.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="menuLogoWrapper">
-                <img src="./assets/img/emblema.png" alt="Emblema">
-                <!-- Botão do menu (ícone de hambúrguer) -->
-                <button class="menu-toggle" aria-label="Abrir menu">
-                    <span class="hamburger"></span>
-                </button>
-                <div class="menuWrapper">
-                    <ul>
-                        <li><a href="index.html" data-barba="link">Página Inicial</a></li>
-                        <li><a href="noivos.html" data-barba="link">Os Noivos</a></li>
-                        <li><a href="casamento.html" data-barba="link">Nosso Dia</a></li>
-                        <li><a href="rspv.html" data-barba="link">Confirme sua Presença</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <!-- tsparticles container -->
+  <div id="tsparticles"></div>
 
-    <!-- Conteúdo Principal -->
-    <main data-barba="wrapper">
-        <div data-barba="container" data-barba-namespace="rspv">
-            <section id="rspv">
-                <!-- Conteúdo da página "Confirme sua presença" -->
-                <div class="rspvContainer">
-                    <h1 class="sectionTitle">Confirme sua presença</h1>
-                    <div class="rspvWrapper">
-                        <form action="https://formspree.io/f/xovaodap" method="POST" class="rsvp-form">
-                            <label for="name">Nome Completo:</label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="_replyto" placeholder="exemplo@email.com" required>
-                            <label for="telefone">Telefone:</label>
-                            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
-                            <div class="confirmacaoContainer">
-                                <div class="confirmacaoWrapper">
-                                    <label for="attendance">Confirma Presença?</label>
-                                    <select id="attendance" name="attendance" required>
-                                        <option value="yes">Sim</option>
-                                        <option value="no">Não</option>
-                                    </select>
-                                </div>
-                                <div class="confirmacaoWrapper">
-                                    <label for="guests">Número de Acompanhantes:</label>
-                                    <input type="number" id="guests" name="guests" min="0" value="0" required>
-                                </div>
-                            </div>
-                            <label for="message">Mensagem para os Noivos:</label>
-                            <textarea id="message" name="message"></textarea>
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="menuLogoWrapper">
+        <img src="./assets/img/emblema.png" alt="Emblema" />
+        <!-- Botão do menu (ícone de hambúrguer) -->
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span class="hamburger"></span>
+        </button>
+        <div class="menuWrapper">
+          <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="noivos.html">Os Noivos</a></li>
+            <li><a href="casamento.html">Nosso Dia</a></li>
+            <li><a href="rspv.html">Confirme sua Presença</a></li>
+          </ul>
         </div>
-    </main>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Scripts -->
-    <!-- Barba.js e GSAP -->
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- Script de contagem regressiva -->
-    <script src="./assets/js/countdown.js"></script>
-    <script src="./assets/js/menuHamburguer.js"></script>
-    <!-- Inicialização do Barba.js -->
-    <script>
-        // Aguarde o carregamento do DOM
-        document.addEventListener('DOMContentLoaded', function() {
+  <!-- Conteúdo Principal -->
+  <main data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="rspv">
+      <section id="rspv">
+        <!-- Conteúdo da página "Confirme sua presença" -->
+        <div class="rspvContainer">
+          <h1 class="sectionTitle">Confirme sua presença</h1>
+          <div class="rspvWrapper">
+            <form action="https://formspree.io/f/xovaodap" method="POST" class="rsvp-form">
+              <label for="name">Nome Completo:</label>
+              <input type="text" id="name" name="name" required>
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="_replyto" placeholder="exemplo@email.com" required>
+              <label for="telefone">Telefone:</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+              <div class="confirmacaoContainer">
+                <div class="confirmacaoWrapper">
+                  <label for="attendance">Confirma Presença?</label>
+                  <select id="attendance" name="attendance" required>
+                    <option value="yes">Sim</option>
+                    <option value="no">Não</option>
+                  </select>
+                </div>
+                <div class="confirmacaoWrapper">
+                  <label for="guests">Número de Acompanhantes:</label>
+                  <input type="number" id="guests" name="guests" min="0" value="0" required>
+                </div>
+              </div>
+              <label for="message">Mensagem para os Noivos:</label>
+              <textarea id="message" name="message"></textarea>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Scripts Personalizados -->
+  <script src="./assets/js/menuHamburguer.js"></script>
+  <!-- Inicialização dos scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Inicializa o menu e as partículas na primeira carga
+        // Função para inicializar o menu
+        function initMenu() {
+        if (typeof initMenuToggle === 'function') {
             initMenuToggle();
-            // Inicialização do Barba.js
-            barba.init({
-                sync: true,
-                transitions: [
-                    {
-                        async leave(data) {
-                            const done = this.async();
-                            // Limpe o intervalo se estiver saindo da página inicial
-                            if (data.current.namespace === 'home' && typeof countdownInterval !== 'undefined') {
-                                clearInterval(countdownInterval);
-                            }
-                            // Animação de saída
-                            gsap.to(data.current.container, {
-                                opacity: 0,
-                                duration: 0.5,
-                                onComplete: done
-                            });
-                        },
-                        async enter(data) {
-                            // Animação de entrada
-                            gsap.from(data.next.container, {
-                                opacity: 0,
-                                duration: 0.5
-                            });
-                            // Inicialize o contador se estiver na página inicial
-                            if (data.next.namespace === 'home') {
-                                initializeCountdown();
-                            }
-                        },
-                        async once(data) {
-                            // Animação na primeira carga
-                            gsap.from(data.next.container, {
-                                opacity: 0,
-                                duration: 0.5
-                            });
-                            // Inicialize o contador se estiver na página inicial
-                            if (data.next.namespace === 'home') {
-                                initializeCountdown();
-                            }
-                        }
-                    }
-                ]
-            });
-    
-            // Caso a página inicial seja carregada diretamente sem transição
-            if (document.querySelector('[data-barba-namespace="home"]')) {
-                initializeCountdown();
+        }
+        
+        // Forçar a visibilidade do menu após um breve atraso
+        setTimeout(() => {
+            const menuWrapper = document.querySelector('.menuWrapper');
+            if (menuWrapper) {
+                menuWrapper.style.display = 'block';
             }
+        }, 100);
+    }
+
+    // Inicializa o menu e as partículas na primeira carga
+    window.initMenu = initMenu;
+    initParticles();
+
+
+    // Função para inicializar partículas
+    function initParticles() {
+        loadHeartShape(tsParticles);
+
+        tsParticles.load("tsparticles", {
+            particles: {
+                number: {
+                    value: 150,
+                    density: {
+                        enable: true,
+                        area: 800,
+                    },
+                },
+                color: {
+                    value: "#FF7AA2",
+                },
+                shape: {
+                    type: "heart",
+                },
+                opacity: {
+                    value: 0.2,
+                    random: false,
+                },
+                size: {
+                    value: 20,
+                    random: true,
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "bottom",
+                    random: false,
+                    straight: false,
+                    outModes: {
+                        default: "out",
+                    },
+                },
+            },
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "bubble",
+                    },
+                    onClick: {
+                        enable: true,
+                        mode: "repulse",
+                    },
+                    resize: true,
+                },
+                modes: {
+                    bubble: {
+                        distance: 200,
+                        size: 30,
+                        duration: 2,
+                        opacity: 0.8,
+                        speed: 3,
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4,
+                    },
+                },
+            },
+            retina_detect: true,
         });
-    </script>
+    }
+
+    // Inicialização do Barba.js
+    barba.init({
+        sync: true,
+        transitions: [
+            {
+                async leave(data) {
+                    const done = this.async();
+                    // Animação de saída
+                    gsap.to(data.current.container, {
+                        opacity: 0,
+                        duration: 0.5,
+                        onComplete: done,
+                    });
+                },
+                async enter(data) {
+                    // Animação de entrada
+                    gsap.from(data.next.container, {
+                        opacity: 0,
+                        duration: 0.5,
+                    });
+
+                    // Reexecutar scripts necessários para o menu e partículas
+                    initMenuToggle();
+                    initParticles();
+                },
+                async once(data) {
+                    // Animação na primeira carga
+                    gsap.from(data.next.container, {
+                        opacity: 0,
+                        duration: 0.5,
+                    });
+
+                    // Inicialização dos scripts necessários para o menu e partículas
+                    initMenuToggle();
+                    initParticles();
+                },
+            },
+        ],
+    });
+
+    // Observação: Inicialize o contador somente se for a página inicial
+    if (document.querySelector('[data-barba-namespace="home"]')) {
+        initializeCountdown();
+    }
+});
+
+</script>
 </body>
 </html>
