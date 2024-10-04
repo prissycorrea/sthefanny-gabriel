@@ -79,6 +79,10 @@
               <textarea id="message" name="message"></textarea>
               <button type="submit">Enviar</button>
             </form>
+            <div id="successMessage" style="display: none;">
+              <h2>Obrigado!</h2>
+              <p>Sua confirmação foi enviada com sucesso.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -223,6 +227,46 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector('[data-barba-namespace="home"]')) {
         initializeCountdown();
     }
+    const form = document.querySelector('.rsvp-form');
+  const rspvContainer = document.querySelector('.rspvContainer');
+  const successMessage = document.getElementById('successMessage');
+  const sectionTitle = document.querySelector('.sectionTitle');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Erro na rede ao enviar o formulário');
+        }
+      }).then(data => {
+        // Formspree retornou uma resposta bem-sucedida
+        // Esconder o formulário e o título da seção
+        form.style.display = 'none';
+        if (sectionTitle) {
+          sectionTitle.style.display = 'none';
+        }
+        
+        // Mostrar a mensagem de sucesso
+        successMessage.style.display = 'block';
+        
+        // Limpar o formulário
+        form.reset();
+      }).catch(error => {
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+      });
+    });
+  }
 });
 
 </script>

@@ -639,6 +639,10 @@ textarea {
     transform: translateY(0);
 }
 
+#successMessage h2, #successMessage p {
+    color: #B9375E;
+}
+
 /* Responsividade do RSPV */
 @media (max-width: 768px) {
     .rspvContainer {
