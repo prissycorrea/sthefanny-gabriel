@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sthefanny & Gabriel - Álbum de Casamento</title>
+    <link
+      rel="icon"
+      href="./assets/img/favicons/pinkHeart.png"
+      type="image/x-icon"
+    />
+    <!-- Fontes e Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+    <link rel="stylesheet" href="./assets/styles/album.css" />
+
+  </head>
+  <body>
+    <div id="background-container">
+      <!-- tsparticles container -->
+    </div>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="menuLogoWrapper">
+          <a href="index.html"><img src="./assets/img/emblema.png" /></a>
+
+          <!--<div class="menuWrapper">
+            <ul>
+              <li><a href="index.html">Página Inicial</a></li>
+              <li><a href="noivos.html">Os Noivos</a></li>
+              <li><a href="casamento.html">Nosso Dia</a></li>
+              <li><a href="rspv.html">Confirme sua Presença</a></li>
+            </ul>
+          </div>-->
+        </div>
+      </nav>
+    </header>
+    <!-- Conteúdo Principal -->
+    <main>
+      <section id="album">
+        <h1>Álbum de Fotos</h1>
+  <div id="auth-section">
+    <p>Digite o código de acesso para ver as fotos:</p>
+    <input type="password" id="access-code" placeholder="Código de acesso">
+    <button onclick="verifyCode()">Entrar</button>
+    <p id="error-message" style="color: red;" class="hidden">Código incorreto. Tente novamente!</p>
+  </div>
+
+  <div id="photo-section" class="hidden">
+    <h2>Fotos do Casamento</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper" id="photo-container">
+        <!-- As fotos serão inseridas aqui dinamicamente -->
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+      const correctCode = "123"; // Substitua pelo seu código de acesso
+  
+      // Links das fotos hospedadas no Google Photos
+      const photoLinks = [
+        "https://lh3.googleusercontent.com/pw/AP1GczNVNlLVDDkRw62t95bT5BxqRyIgA6EJH-nUSwcHP0_pDt44J5GqWZUjzA493LKw-71H5Ug4bmjLFm1oLErxBWeLM1hRJQjUwq1ipp4DXvtluuqfrj6TE_skEjfSWAvxAXM3cHTwq7VCFHd7crMoamA=w1800-h1201-s-no-gm?authuser=4",
+        "https://lh3.googleusercontent.com/pw/AP1GczOhHSubE8rb5SMFwvGGR0a782qmlRM2cD6m9QwVSvRRVVkvJPUTA7zsSPpFU2YrueP2lWtSSEuHoNJX2aO-FBzD50hpweNgPZPM2xim4iuBWyCSJlyoUGjIk6_GDI2Pa0ylgaPhvNwkMOsM54L8XXY=w1279-h1279-s-no-gm?authuser=4",
+        "https://lh3.googleusercontent.com/pw/AP1GczMDj3dEbz8abQdCisoHNxKynwJCWP4RSU9wJBbwXyLhI6T-f7xJGXu-MT34ZrQJJvHqi7gi7Dns7ezI648HsKw2qBwjjrA-Ono8fSIAGhFppxSdr5Cnxz3zig-lfdumGM5CTfc_EzF_D6B6H07bAGA=w1800-h1200-s-no-gm?authuser=4",
+        // Adicione mais links conforme necessário
+      ];
+  
+      function verifyCode() {
+        const inputCode = document.getElementById('access-code').value;
+        const errorMessage = document.getElementById('error-message');
+        const photoSection = document.getElementById('photo-section');
+        const authSection = document.getElementById('auth-section');
+  
+        if (inputCode === correctCode) {
+          // Esconde a seção de autenticação e mostra as fotos
+          authSection.classList.add('hidden');
+          photoSection.classList.remove('hidden');
+  
+          // Exibe as fotos dinamicamente no Swiper
+          const photoContainer = document.getElementById('photo-container');
+          photoLinks.forEach(link => {
+            const slideDiv = document.createElement('div');
+            slideDiv.classList.add('swiper-slide');
+            const img = document.createElement('img');
+            img.src = link;
+            img.alt = "Foto do casamento";
+            slideDiv.appendChild(img);
+            photoContainer.appendChild(slideDiv);
+          });
+  
+          // Inicializa o Swiper após as fotos serem adicionadas
+          const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          });
+        } else {
+          // Mostra mensagem de erro
+          errorMessage.classList.remove('hidden');
+        }
+      }
+    </script>
+  </body>
+</html>
