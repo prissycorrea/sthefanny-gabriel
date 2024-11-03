@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* Suaviza o comportamento de scroll no Safari */
+    overflow-y: auto;
+}
+
+body, button, input {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    background: linear-gradient(180deg, #FFC2D4 0%, #FFE0E9 100%);
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+section {
+    height: 100% !important;
+}
+
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(180deg, #FFC2D4 0%, #FFE0E9 100%);
+    overflow: hidden;
+}
+
+#album {
+    /*background: linear-gradient(180deg, #FFC2D4 0%, #FFE0E9 100%);*/
+    min-height: 100vh;
+    width: 100%;
+    z-index: 1000;
+}
+
+.noivosTitle, .sectionTitle {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+.menuLogoWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.menuLogoWrapper img {
+    height: 50px;
+}
+
+
+/* Responsividade do Header */
+@media (max-width: 768px) {
+    header {
+        width: 100vw;
+    }
+
+    .menuLogoWrapper {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .menuLogoWrapper img {
+        margin-bottom: 15px;
+    }
+}
+
+/* Página Inicial / Countdown */
+#album {
+    align-items: center;
+    /*background: linear-gradient(180deg, #FFC2D4 0%, #FFE0E9 100%);*/
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.noivosTitle {
+    color: #B9375E;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 48px;
+    margin-bottom: 40px;
+    padding-top: 60px;
+    z-index: 9999;
+}
+
+
+/* Responsividade da Página Inicial */
+@media (max-width: 1023px) {
+    #album {
+        height: 120vh;
+    }
+
+    .noivosTitle {
+        font-size: 22px;
+        margin-top: 120px;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 1023px) {
+    #album {
+        height: 140vh;
+    }
+
+    .noivosTitle {
+        font-size: 36px;
+    }
+
+    .noivosTitle {
+        padding: 10px;
+    }
+}
+
+/* Dados do Casamento */
+#casamento {
+    /*background: linear-gradient(180deg, #FFC2D4 0%, #FFE0E9 100%);*/
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.sectionTitle {
+    color: #B9375E;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    margin-top: 2em;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Estilização personalizada da barra de rolagem */
+
+/* Para navegadores baseados em WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFE0E9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #B9375E;
+    border-radius: 10px;
+    border: 2px solid #FFE0E9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #E05780;
+}
+
+/* Para navegadores Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #B9375E #FFE0E9;
+}
+
+/* Carousel */
+.hidden {
+    display: none;
+  }
+  .swiper {
+    width: 80%;
+    height: 400px;
+    margin: auto;
+  }
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
